@@ -1,5 +1,6 @@
 # JeremyAnsel.DirectX.Dds
 
+[![Build status](https://ci.appveyor.com/api/projects/status/82tbhgrqyrxx0igv/branch/master?svg=true)](https://ci.appveyor.com/project/JeremyAnsel/jeremyansel-directx-dds/branch/master)
 [![NuGet Version](https://buildstats.info/nuget/JeremyAnsel.DirectX.Dds)](https://www.nuget.org/packages/JeremyAnsel.DirectX.Dds)
 ![License](https://img.shields.io/github/license/JeremyAnsel/JeremyAnsel.DirectX.Dds)
 
@@ -11,3 +12,4 @@ License         | [The MIT License (MIT)](https://github.com/JeremyAnsel/JeremyA
 Documentation   | http://jeremyansel.github.io/JeremyAnsel.DirectX.Dds
 Source code     | https://github.com/JeremyAnsel/JeremyAnsel.DirectX.Dds
 Nuget           | https://www.nuget.org/packages/JeremyAnsel.DirectX.Dds
+Build           | https://ci.appveyor.com/project/JeremyAnsel/jeremyansel-directx-dds/branch/master
