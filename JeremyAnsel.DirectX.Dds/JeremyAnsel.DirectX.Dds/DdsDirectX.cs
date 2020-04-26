@@ -412,6 +412,11 @@ namespace JeremyAnsel.DirectX.Dds
             }
         }
 
+        private static bool IsBitMask(DdsPixelFormat ddpf, uint r, uint g, uint b, uint a)
+        {
+            return ddpf.RedBitMask == r && ddpf.GreenBitMask == g && ddpf.BlueBitMask == b && ddpf.AlphaBitMask == a;
+        }
+
         [SuppressMessage("Microsoft.Maintainability", "CA1505:AvoidUnmaintainableCode")]
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling")]
@@ -437,6 +442,46 @@ namespace JeremyAnsel.DirectX.Dds
             int arraySize = Math.Max(1, dds.ArraySize);
             DxgiFormat format = (DxgiFormat)dds.Format;
             bool isCubeMap = false;
+
+            if (dds.Format == DdsFormat.Unknown)
+            {
+                if (dds.PixelFormat.RgbBitCount == 32)
+                {
+                    if (IsBitMask(dds.PixelFormat, 0x000000ff, 0x0000ff00, 0x00ff0000, 0x00000000))
+                    {
+                        format = DxgiFormat.B8G8R8X8UNorm;
+                        int length = bitData.Length / 4;
+                        var bytes = new byte[length * 4];
+
+                        for (int i = 0; i < length; i++)
+                        {
+                            bytes[i * 4 + 0] = bitData[i * 4 + 2];
+                            bytes[i * 4 + 1] = bitData[i * 4 + 1];
+                            bytes[i * 4 + 2] = bitData[i * 4 + 0];
+                        }
+
+                        bitData = bytes;
+                    }
+                }
+                else if (dds.PixelFormat.RgbBitCount == 24)
+                {
+                    if (IsBitMask(dds.PixelFormat, 0x00ff0000, 0x0000ff00, 0x000000ff, 0x00000000))
+                    {
+                        format = DxgiFormat.B8G8R8X8UNorm;
+                        int length = bitData.Length / 3;
+                        var bytes = new byte[length * 4];
+
+                        for (int i = 0; i < length; i++)
+                        {
+                            bytes[i * 4 + 0] = bitData[i * 3 + 0];
+                            bytes[i * 4 + 1] = bitData[i * 3 + 1];
+                            bytes[i * 4 + 2] = bitData[i * 3 + 2];
+                        }
+
+                        bitData = bytes;
+                    }
+                }
+            }
 
             int mipCount = Math.Max(1, dds.MipmapCount);
 
