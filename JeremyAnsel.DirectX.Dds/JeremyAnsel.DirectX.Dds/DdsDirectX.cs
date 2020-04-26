@@ -304,6 +304,15 @@ namespace JeremyAnsel.DirectX.Dds
                             desc.MiscOptions = miscFlags & ~D3D11ResourceMiscOptions.TextureCube;
                         }
 
+                        if (format == DxgiFormat.BC1UNorm || format == DxgiFormat.BC2UNorm || format == DxgiFormat.BC3UNorm)
+                        {
+                            if ((width & 3) != 0 || (height & 3) != 0)
+                            {
+                                desc.Width = (uint)(width + 3) & ~3U;
+                                desc.Height = (uint)(height + 3) & ~3U;
+                            }
+                        }
+
                         texture = device.CreateTexture2D(desc, initData);
 
                         try
