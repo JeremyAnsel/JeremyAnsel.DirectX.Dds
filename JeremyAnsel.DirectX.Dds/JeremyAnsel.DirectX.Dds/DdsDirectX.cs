@@ -629,7 +629,7 @@ namespace JeremyAnsel.DirectX.Dds
             if (mipCount == 1)
             {
                 // See if format is supported for auto-gen mipmaps (varies by feature level)
-                if (device.CheckFormatSupport(format, out D3D11FormatSupport fmtSupport)
+                if (!device.CheckFormatSupport(format, out D3D11FormatSupport fmtSupport)
                     && (fmtSupport & D3D11FormatSupport.MipAutogen) != 0)
                 {
                     // 10level9 feature levels do not support auto-gen mipgen for volume textures
