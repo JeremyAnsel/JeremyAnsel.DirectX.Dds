@@ -1,14 +1,4 @@
 {
-  "api/index.html": {
-    "href": "api/index.html",
-    "title": "JeremyAnsel.DirectX.Dds",
-    "keywords": "JeremyAnsel.DirectX.Dds This is the documentation for JeremyAnsel.DirectX.Dds."
-  },
-  "index.html": {
-    "href": "index.html",
-    "title": "JeremyAnsel.DirectX.Dds",
-    "keywords": "JeremyAnsel.DirectX.Dds JeremyAnsel.DirectX.Dds is a .Net library to handle DirectX .dds files."
-  },
   "api/JeremyAnsel.DirectX.Dds.html": {
     "href": "api/JeremyAnsel.DirectX.Dds.html",
     "title": "Namespace JeremyAnsel.DirectX.Dds",
@@ -18,5 +8,15 @@
     "href": "api/JeremyAnsel.DirectX.Dds.DdsDirectX.html",
     "title": "Class DdsDirectX",
     "keywords": "Class DdsDirectX Inheritance Object DdsDirectX Inherited Members Object.Equals(Object) Object.Equals(Object, Object) Object.GetHashCode() Object.GetType() Object.MemberwiseClone() Object.ReferenceEquals(Object, Object) Object.ToString() Namespace : JeremyAnsel.DirectX.Dds Assembly : JeremyAnsel.DirectX.Dds.dll Syntax public static class DdsDirectX Methods | Improve this Doc View Source CreateTexture(DdsFile, D3D11Device, D3D11DeviceContext, out D3D11Resource, out D3D11ShaderResourceView) Declaration public static void CreateTexture(DdsFile dds, D3D11Device device, D3D11DeviceContext context, out D3D11Resource texture, out D3D11ShaderResourceView textureView) Parameters Type Name Description DdsFile dds D3D11Device device D3D11DeviceContext context D3D11Resource texture D3D11ShaderResourceView textureView | Improve this Doc View Source CreateTexture(DdsFile, D3D11Device, D3D11DeviceContext, out D3D11ShaderResourceView) Declaration public static void CreateTexture(DdsFile dds, D3D11Device device, D3D11DeviceContext context, out D3D11ShaderResourceView textureView) Parameters Type Name Description DdsFile dds D3D11Device device D3D11DeviceContext context D3D11ShaderResourceView textureView | Improve this Doc View Source CreateTexture(DdsFile, D3D11Device, D3D11DeviceContext, Int32, out D3D11Resource, out D3D11ShaderResourceView, out DdsAlphaMode) Declaration public static void CreateTexture(DdsFile dds, D3D11Device device, D3D11DeviceContext context, int maxSize, out D3D11Resource texture, out D3D11ShaderResourceView textureView, out DdsAlphaMode alphaMode) Parameters Type Name Description DdsFile dds D3D11Device device D3D11DeviceContext context Int32 maxSize D3D11Resource texture D3D11ShaderResourceView textureView DdsAlphaMode alphaMode | Improve this Doc View Source CreateTexture(DdsFile, D3D11Device, D3D11DeviceContext, Int32, out D3D11ShaderResourceView) Declaration public static void CreateTexture(DdsFile dds, D3D11Device device, D3D11DeviceContext context, int maxSize, out D3D11ShaderResourceView textureView) Parameters Type Name Description DdsFile dds D3D11Device device D3D11DeviceContext context Int32 maxSize D3D11ShaderResourceView textureView | Improve this Doc View Source CreateTexture(DdsFile, D3D11Device, D3D11DeviceContext, Int32, D3D11Usage, D3D11BindOptions, D3D11CpuAccessOptions, D3D11ResourceMiscOptions, Boolean, out D3D11Resource, out D3D11ShaderResourceView, out DdsAlphaMode) Declaration public static void CreateTexture(DdsFile dds, D3D11Device device, D3D11DeviceContext context, int maxSize, D3D11Usage usage, D3D11BindOptions bindOptions, D3D11CpuAccessOptions cpuAccessOptions, D3D11ResourceMiscOptions miscOptions, bool forceSRGB, out D3D11Resource texture, out D3D11ShaderResourceView textureView, out DdsAlphaMode alphaMode) Parameters Type Name Description DdsFile dds D3D11Device device D3D11DeviceContext context Int32 maxSize D3D11Usage usage D3D11BindOptions bindOptions D3D11CpuAccessOptions cpuAccessOptions D3D11ResourceMiscOptions miscOptions Boolean forceSRGB D3D11Resource texture D3D11ShaderResourceView textureView DdsAlphaMode alphaMode | Improve this Doc View Source CreateTexture(Stream, D3D11Device, D3D11DeviceContext, out D3D11Resource, out D3D11ShaderResourceView) Declaration public static void CreateTexture(Stream stream, D3D11Device device, D3D11DeviceContext context, out D3D11Resource texture, out D3D11ShaderResourceView textureView) Parameters Type Name Description Stream stream D3D11Device device D3D11DeviceContext context D3D11Resource texture D3D11ShaderResourceView textureView | Improve this Doc View Source CreateTexture(Stream, D3D11Device, D3D11DeviceContext, out D3D11ShaderResourceView) Declaration public static void CreateTexture(Stream stream, D3D11Device device, D3D11DeviceContext context, out D3D11ShaderResourceView textureView) Parameters Type Name Description Stream stream D3D11Device device D3D11DeviceContext context D3D11ShaderResourceView textureView | Improve this Doc View Source CreateTexture(String, D3D11Device, D3D11DeviceContext, out D3D11Resource, out D3D11ShaderResourceView) Declaration public static void CreateTexture(string fileName, D3D11Device device, D3D11DeviceContext context, out D3D11Resource texture, out D3D11ShaderResourceView textureView) Parameters Type Name Description String fileName D3D11Device device D3D11DeviceContext context D3D11Resource texture D3D11ShaderResourceView textureView | Improve this Doc View Source CreateTexture(String, D3D11Device, D3D11DeviceContext, out D3D11ShaderResourceView) Declaration public static void CreateTexture(string fileName, D3D11Device device, D3D11DeviceContext context, out D3D11ShaderResourceView textureView) Parameters Type Name Description String fileName D3D11Device device D3D11DeviceContext context D3D11ShaderResourceView textureView"
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "JeremyAnsel.DirectX.Dds",
+    "keywords": "JeremyAnsel.DirectX.Dds JeremyAnsel.DirectX.Dds is a .Net library to handle DirectX .dds files."
+  },
+  "api/index.html": {
+    "href": "api/index.html",
+    "title": "JeremyAnsel.DirectX.Dds",
+    "keywords": "JeremyAnsel.DirectX.Dds This is the documentation for JeremyAnsel.DirectX.Dds."
   }
 }
