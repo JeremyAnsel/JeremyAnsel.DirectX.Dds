@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "api/JeremyAnsel.DirectX.Dds.DdsDirectX.html",
-          "hash": "t8ZoLPBGokUwkxLyWkPuag=="
+          "hash": "gnSd4ANzCvZRudKmsLXXIfe9BWavGsowpta3fnOxW70="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/JeremyAnsel.DirectX.Dds.html",
-          "hash": "cIZZGb5uhjGfKOE8izskfw=="
+          "hash": "VZN2Bf3xVCUPFt509WN24QGUxkvKUWL4scfFmFcmiUE="
         }
       },
       "is_incremental": false,
@@ -42,19 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "N6h+/INHiePb/Nc7JH8rxw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "api/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/toc.html",
-          "hash": "2Az2Bbj4M5bW+DAZXghaEQ=="
+          "hash": "kSbFPJzDuaqaNLbCjx8H5ErRoiaizyme1h/OudYfmE4="
         }
       },
       "is_incremental": false,
@@ -66,19 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "Gm4y1oIRyDxgMK5L512mRw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "toc.html",
-          "hash": "Uu9bVR5M/VnRz3auSwWCxg=="
+          "hash": "B8TyJFD8GSSk4IjrcZAKOAJqWSORy4m9IxNd8bZhjoM="
         }
       },
       "is_incremental": false,
@@ -96,13 +72,13 @@
         "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
-        "ManagedReferenceDocumentProcessor": {
+        "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 2,
           "skipped_file_count": 0
         },
-        "ConceptualDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 2,
