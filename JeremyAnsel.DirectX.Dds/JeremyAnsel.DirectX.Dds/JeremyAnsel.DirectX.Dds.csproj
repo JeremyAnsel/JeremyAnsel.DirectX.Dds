@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="JeremyAnsel.DirectX.D3D11" Version="3.0.23" />
+    <PackageReference Include="JeremyAnsel.DirectX.D3D11" Version="3.0.24" />
     <PackageReference Include="JeremyAnsel.Media.Dds" Version="2.0.3" />
     <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="6.0.0">
       <PrivateAssets>all</PrivateAssets>
