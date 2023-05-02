@@ -16,8 +16,7 @@
       "source_relative_path": "api/JeremyAnsel.DirectX.Dds.DdsDirectX.yml",
       "output": {
         ".html": {
-          "relative_path": "api/JeremyAnsel.DirectX.Dds.DdsDirectX.html",
-          "hash": "LuNzCcB1q3kHC2zceZzYSbIzDq9WB5oCh48UWTa7q8g="
+          "relative_path": "api/JeremyAnsel.DirectX.Dds.DdsDirectX.html"
         }
       },
       "version": ""
@@ -27,8 +26,7 @@
       "source_relative_path": "api/JeremyAnsel.DirectX.Dds.yml",
       "output": {
         ".html": {
-          "relative_path": "api/JeremyAnsel.DirectX.Dds.html",
-          "hash": "8HNj1PKyt0kZ0M5Oz2kxxBIY4Gu6z0gEFab+scT+wfg="
+          "relative_path": "api/JeremyAnsel.DirectX.Dds.html"
         }
       },
       "version": ""
@@ -38,8 +36,7 @@
       "source_relative_path": "api/index.md",
       "output": {
         ".html": {
-          "relative_path": "api/index.html",
-          "hash": "mCZSybipDrRy+Lj35XFJIklhBTvHaEhSsMQ+Te6zNDI="
+          "relative_path": "api/index.html"
         }
       },
       "version": ""
@@ -49,8 +46,7 @@
       "source_relative_path": "index.md",
       "output": {
         ".html": {
-          "relative_path": "index.html",
-          "hash": "PUapMRj7bE8PjoDaxn1XXIAuTe3WCHt1dB3nsP7pk7s="
+          "relative_path": "index.html"
         }
       },
       "version": ""
