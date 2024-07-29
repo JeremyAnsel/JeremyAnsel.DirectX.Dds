@@ -35,8 +35,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="JeremyAnsel.DirectX.D3D11" Version="3.0.31" />
-    <PackageReference Include="JeremyAnsel.Media.Dds" Version="2.0.4" />
+    <PackageReference Include="JeremyAnsel.DirectX.D3D11" Version="3.0.32" />
+    <PackageReference Include="JeremyAnsel.Media.Dds" Version="2.0.6" />
     <PackageReference Condition="'$(CI)' == 'True'" Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
