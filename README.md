@@ -13,3 +13,13 @@ Documentation   | http://jeremyansel.github.io/JeremyAnsel.DirectX.Dds
 Source code     | https://github.com/JeremyAnsel/JeremyAnsel.DirectX.Dds
 Nuget           | https://www.nuget.org/packages/JeremyAnsel.DirectX.Dds
 Build           | https://ci.appveyor.com/project/JeremyAnsel/jeremyansel-directx-dds/branch/master
+
+# Usage
+
+```csharp
+DdsDirectX.CreateTexture(
+	fileName,
+	d3dDevice,
+	d3dDeviceContext,
+	out D3D11ShaderResourceView textureView);
+```
