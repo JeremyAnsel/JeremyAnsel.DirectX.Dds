@@ -1,9 +1,7 @@
 ﻿using JeremyAnsel.DirectX.D3D11;
 using JeremyAnsel.DirectX.Dxgi;
 using JeremyAnsel.Media.Dds;
-using System;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
 
 namespace JeremyAnsel.DirectX.Dds
 {
