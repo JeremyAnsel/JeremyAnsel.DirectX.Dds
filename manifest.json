@@ -18,7 +18,11 @@
           "relative_path": "api/JeremyAnsel.DirectX.Dds.DdsDirectX.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "JeremyAnsel.DirectX.Dds.DdsDirectX",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -28,7 +32,11 @@
           "relative_path": "api/JeremyAnsel.DirectX.Dds.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "JeremyAnsel.DirectX.Dds",
+      "Summary": null
     },
     {
       "type": "Conceptual",
