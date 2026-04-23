@@ -57,7 +57,7 @@
     ],
     "postProcessors": [ "ExtractSearchIndex" ],
     "globalMetadata": {
-      "_appFooter": "Copyright (c) 2020-2022 J&eacute;r&eacute;my Ansel",
+      "_appFooter": "Copyright (c) 2020-2026 J&eacute;r&eacute;my Ansel",
       "_enableSearch": "true"
     },
     "markdownEngineName": "markdig",

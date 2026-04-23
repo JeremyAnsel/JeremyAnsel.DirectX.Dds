@@ -12,11 +12,11 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <ContinuousIntegrationBuild Condition="'$(CI)' == 'True'">true</ContinuousIntegrationBuild>
-    <Version>2.0.0</Version>
+    <Version>3.0.0</Version>
     <Description>A .Net library to handle DirectX .dds files</Description>
     <Authors>Jérémy Ansel</Authors>
     <Company>Jérémy Ansel</Company>
-    <Copyright>Copyright © 2020-2022 Jérémy Ansel</Copyright>
+    <Copyright>Copyright © 2020-2026 Jérémy Ansel</Copyright>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>Media 3D Model DirectX Dds</PackageTags>
@@ -40,11 +40,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="PolySharp" Version="1.14.1">
+    <PackageReference Include="PolySharp" Version="1.15.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="JeremyAnsel.DirectX.D3D11" Version="3.0.49" />
+    <PackageReference Include="JeremyAnsel.DirectX.D3D11" Version="4.0.50" />
     <PackageReference Include="JeremyAnsel.Media.Dds" Version="2.0.7" />
     <PackageReference Condition="'$(CI)' == 'True'" Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
       <PrivateAssets>all</PrivateAssets>

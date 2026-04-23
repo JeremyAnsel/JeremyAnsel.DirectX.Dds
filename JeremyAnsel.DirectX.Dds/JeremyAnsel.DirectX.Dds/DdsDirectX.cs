@@ -1,4 +1,5 @@
 ﻿using JeremyAnsel.DirectX.D3D11;
+using JeremyAnsel.DirectX.DXCommon;
 using JeremyAnsel.DirectX.Dxgi;
 using JeremyAnsel.Media.Dds;
 using System.Diagnostics.CodeAnalysis;
@@ -7,6 +8,20 @@ namespace JeremyAnsel.DirectX.Dds
 {
     public static class DdsDirectX
     {
+        public static void CreateTexture(
+            string? fileName,
+            D3D11DeviceAndContext? device,
+            out D3D11ShaderResourceView? textureView)
+        {
+            if (string.IsNullOrEmpty(fileName))
+            {
+                throw new ArgumentNullException(nameof(fileName));
+            }
+
+            DdsFile dds = DdsFile.FromFile(fileName!);
+            CreateTexture(dds, device, out textureView);
+        }
+
         public static void CreateTexture(
             string? fileName,
             D3D11Device? device,
@@ -20,6 +35,21 @@ namespace JeremyAnsel.DirectX.Dds
 
             DdsFile dds = DdsFile.FromFile(fileName!);
             CreateTexture(dds, device, context, out textureView);
+        }
+
+        public static void CreateTexture(
+            string? fileName,
+            D3D11DeviceAndContext? device,
+            out D3D11Resource? texture,
+            out D3D11ShaderResourceView? textureView)
+        {
+            if (string.IsNullOrEmpty(fileName))
+            {
+                throw new ArgumentNullException(nameof(fileName));
+            }
+
+            DdsFile dds = DdsFile.FromFile(fileName!);
+            CreateTexture(dds, device, out texture, out textureView);
         }
 
         public static void CreateTexture(
@@ -40,6 +70,20 @@ namespace JeremyAnsel.DirectX.Dds
 
         public static void CreateTexture(
             Stream? stream,
+            D3D11DeviceAndContext? device,
+            out D3D11ShaderResourceView? textureView)
+        {
+            if (stream is null)
+            {
+                throw new ArgumentNullException(nameof(stream));
+            }
+
+            DdsFile dds = DdsFile.FromStream(stream);
+            CreateTexture(dds, device, out textureView);
+        }
+
+        public static void CreateTexture(
+            Stream? stream,
             D3D11Device? device,
             D3D11DeviceContext? context,
             out D3D11ShaderResourceView? textureView)
@@ -51,6 +95,21 @@ namespace JeremyAnsel.DirectX.Dds
 
             DdsFile dds = DdsFile.FromStream(stream);
             CreateTexture(dds, device, context, out textureView);
+        }
+
+        public static void CreateTexture(
+            Stream? stream,
+            D3D11DeviceAndContext? device,
+            out D3D11Resource? texture,
+            out D3D11ShaderResourceView? textureView)
+        {
+            if (stream is null)
+            {
+                throw new ArgumentNullException(nameof(stream));
+            }
+
+            DdsFile dds = DdsFile.FromStream(stream);
+            CreateTexture(dds, device, out texture, out textureView);
         }
 
         public static void CreateTexture(
@@ -71,12 +130,30 @@ namespace JeremyAnsel.DirectX.Dds
 
         public static void CreateTexture(
             DdsFile? dds,
+            D3D11DeviceAndContext? device,
+            out D3D11ShaderResourceView? textureView)
+        {
+            CreateTexture(dds, device, 0, out D3D11Resource? texture, out textureView, out _);
+            DXUtils.DisposeAndNull(ref texture);
+        }
+
+        public static void CreateTexture(
+            DdsFile? dds,
             D3D11Device? device,
             D3D11DeviceContext? context,
             out D3D11ShaderResourceView? textureView)
         {
             CreateTexture(dds, device, context, 0, out D3D11Resource? texture, out textureView, out _);
-            D3D11Utils.DisposeAndNull(ref texture);
+            DXUtils.DisposeAndNull(ref texture);
+        }
+
+        public static void CreateTexture(
+            DdsFile? dds,
+            D3D11DeviceAndContext? device,
+            out D3D11Resource? texture,
+            out D3D11ShaderResourceView? textureView)
+        {
+            CreateTexture(dds, device, 0, out texture, out textureView, out _);
         }
 
         public static void CreateTexture(
@@ -91,13 +168,45 @@ namespace JeremyAnsel.DirectX.Dds
 
         public static void CreateTexture(
             DdsFile? dds,
+            D3D11DeviceAndContext? device,
+            int maxSize,
+            out D3D11ShaderResourceView? textureView)
+        {
+            CreateTexture(dds, device, maxSize, out D3D11Resource? texture, out textureView, out _);
+            DXUtils.DisposeAndNull(ref texture);
+        }
+
+        public static void CreateTexture(
+            DdsFile? dds,
             D3D11Device? device,
             D3D11DeviceContext? context,
             int maxSize,
             out D3D11ShaderResourceView? textureView)
         {
             CreateTexture(dds, device, context, maxSize, out D3D11Resource? texture, out textureView, out _);
-            D3D11Utils.DisposeAndNull(ref texture);
+            DXUtils.DisposeAndNull(ref texture);
+        }
+
+        public static void CreateTexture(
+            DdsFile? dds,
+            D3D11DeviceAndContext? device,
+            int maxSize,
+            out D3D11Resource? texture,
+            out D3D11ShaderResourceView? textureView,
+            out DdsAlphaMode alphaMode)
+        {
+            CreateTexture(
+                dds,
+                device,
+                maxSize,
+                D3D11Usage.Default,
+                D3D11BindOptions.ShaderResource,
+                D3D11CpuAccessOptions.None,
+                D3D11ResourceMiscOptions.None,
+                false,
+                out texture,
+                out textureView,
+                out alphaMode);
         }
 
         public static void CreateTexture(
@@ -126,6 +235,34 @@ namespace JeremyAnsel.DirectX.Dds
 
         public static void CreateTexture(
             DdsFile? dds,
+            D3D11DeviceAndContext? device,
+            int maxSize,
+            D3D11Usage usage,
+            D3D11BindOptions bindOptions,
+            D3D11CpuAccessOptions cpuAccessOptions,
+            D3D11ResourceMiscOptions miscOptions,
+            bool forceSRGB,
+            out D3D11Resource? texture,
+            out D3D11ShaderResourceView? textureView,
+            out DdsAlphaMode alphaMode)
+        {
+            CreateTexture(
+                dds,
+                device?.Device,
+                device?.Context,
+                maxSize,
+                usage,
+                bindOptions,
+                cpuAccessOptions,
+                miscOptions,
+                forceSRGB,
+                out texture,
+                out textureView,
+                out alphaMode);
+        }
+
+        public static void CreateTexture(
+            DdsFile? dds,
             D3D11Device? device,
             D3D11DeviceContext? context,
             int maxSize,
@@ -138,17 +275,17 @@ namespace JeremyAnsel.DirectX.Dds
             out D3D11ShaderResourceView? textureView,
             out DdsAlphaMode alphaMode)
         {
-            if (dds == null)
+            if (dds is null)
             {
                 throw new ArgumentNullException(nameof(dds));
             }
 
-            if (device == null)
+            if (device is null)
             {
                 throw new ArgumentNullException(nameof(device));
             }
 
-            if (context == null)
+            if (context is null)
             {
                 throw new ArgumentNullException(nameof(context));
             }
@@ -324,7 +461,7 @@ namespace JeremyAnsel.DirectX.Dds
                         }
                         catch
                         {
-                            D3D11Utils.DisposeAndNull(ref texture);
+                            DXUtils.DisposeAndNull(ref texture);
                             throw;
                         }
 
@@ -415,7 +552,7 @@ namespace JeremyAnsel.DirectX.Dds
                         }
                         catch
                         {
-                            D3D11Utils.DisposeAndNull(ref texture);
+                            DXUtils.DisposeAndNull(ref texture);
                             throw;
                         }
 
@@ -453,7 +590,7 @@ namespace JeremyAnsel.DirectX.Dds
                         }
                         catch
                         {
-                            D3D11Utils.DisposeAndNull(ref texture);
+                            DXUtils.DisposeAndNull(ref texture);
                             throw;
                         }
 
@@ -715,8 +852,8 @@ namespace JeremyAnsel.DirectX.Dds
 
                 if (texture is null || textureView is null)
                 {
-                    D3D11Utils.DisposeAndNull(ref textureView);
-                    D3D11Utils.DisposeAndNull(ref texture);
+                    DXUtils.DisposeAndNull(ref textureView);
+                    DXUtils.DisposeAndNull(ref texture);
                     return;
                 }
 
@@ -795,8 +932,8 @@ namespace JeremyAnsel.DirectX.Dds
                 }
                 catch
                 {
-                    D3D11Utils.DisposeAndNull(ref textureView);
-                    D3D11Utils.DisposeAndNull(ref texture);
+                    DXUtils.DisposeAndNull(ref textureView);
+                    DXUtils.DisposeAndNull(ref texture);
                     throw;
                 }
             }
